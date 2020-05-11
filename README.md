@@ -1,5 +1,5 @@
 # mnist-inference-ibmcloud
-Cloud ML Assignment - 4. Deploy MNIST on IBM Cloud Kubernetes Cluster and get Inference
+Cloud ML Assignment - 4. Deploy MNIST on IBM Cloud Kubernetes Cluster and get Inference using a Flask App
 
 # Set up Environment
 1) Load Vagrant VM (ubuntu:latest) with docker installed and IBM Cloud CLI Installed and ssh into it: 
