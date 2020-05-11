@@ -30,17 +30,17 @@ Create deployment of replica sets with yaml file (Check Docker Image)
 
 # Set Up Kubernetes Cluster
 Go to kubernetes dashboard on your IBM portal and create the deployment using yaml file (sepcifying the correct docker image)
-   Login to IBM CLoud: ibmcloud login -a cloud.ibm.com -r us-south -g Default
-   Connect to ibm-cluster by setting context: ibmcloud ks cluster config --cluster bqriu25d0hvamd79p3bg
-Check status - kubectl get pods
+   Login to IBM CLoud: ibmcloud login -a cloud.ibm.com -r us-south -g Default \n
+   Connect to ibm-cluster by setting context: ibmcloud ks cluster config --cluster bqriu25d0hvamd79p3bg \n
+Check status - kubectl get pods \n
 
 (Optional - Update Image)
 kubectl set image deployment/mnist-deployment mnist-inference=mnist-inference:tag
 
 # Create Service and Expose Endpoint
-kubectl expose deployment mnist-deployment --port 8001 --target-port 8001 --type=NodePort
-minikube service mnist-deployment
-Get Port: kubectl describe svc mnist-deployment
+kubectl expose deployment mnist-deployment --port 8001 --target-port 8001 --type=NodePort \n
+minikube service mnist-deployment \n
+Get Port: kubectl describe svc mnist-deployment \n
 Get Enpoint (Worker's Public IP): ibmcloud ks worker ls --cluster {cluster_name}
 
 # Run App
