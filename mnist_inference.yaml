@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2 
+kind: Deployment 
+metadata: 
+  name: mnist-deployment 
+spec: 
+  selector: 
+    matchLabels: 
+      app: mnist-deployment
+  replicas: 2
+  template: 
+    metadata: 
+      labels: 
+        app: mnist-deployment
+    spec: 
+      containers: 
+      - name: mnist-deployment
+        image: siddpatny/mnist-inference:latest 
+        ports: 
+        - containerPort: 8001
